@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo from '../logo.svg'
+import logo from './logo.svg'
 
 
 const Home = () => (
@@ -9,14 +9,6 @@ const Home = () => (
     <p>
       This is Tyler's playground for building a PWA
     </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-    </a>
   </header>
 )
 
