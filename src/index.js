@@ -1,13 +1,19 @@
+/* 3rd Party Libraries */
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './index.css'
-// import App from './App'
-import Router from './Router'
+/* Components */
+import Router from './router/Router'
 
+/* Styling */
+import './index.css'
+import './App.css'
+
+/* Utility */
 import * as serviceWorker from './serviceWorker'
 
 
+// Bind the react code to the target element in the HTML
 ReactDOM.render(<Router />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
