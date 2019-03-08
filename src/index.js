@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom'
 import Router from './router/Router'
 
 /* Styling */
-import './index.css'
-import './App.css'
+import './styles/index.css'
+import './styles/App.css'
 
 /* Utility */
 import * as serviceWorker from './serviceWorker'

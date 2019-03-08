@@ -1,13 +1,13 @@
 import React from 'react'
 
-import logo from './logo.svg'
+import wtlogo from './wt_light.png'
 
 
 const Home = () => (
   <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
+    <img src={wtlogo} className="App-logo" alt="logo" />
     <p>
-      This is Tyler's playground for building a PWA
+      This is a preview of WolffTrack's coming <a href='https://developers.google.com/web/progressive-web-apps/checklist' target='_blank' rel='noopener noreferrer' >PWA</a>!
     </p>
   </header>
 )
