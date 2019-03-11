@@ -6,11 +6,10 @@ import ReactDOM from 'react-dom'
 import Router from './router/Router'
 
 /* Styling */
-import './styles/index.css'
-import './styles/App.css'
+import './styles/styles.scss'
 
 /* Utility */
-import * as serviceWorker from './serviceWorker'
+import * as serviceWorker from './utils/serviceWorker/serviceWorker'
 
 
 // Bind the react code to the target element in the HTML
