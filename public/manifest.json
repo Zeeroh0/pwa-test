@@ -1,23 +1,41 @@
 {
   "short_name": "Dev App",
   "name": "WolffTrax Development App",
+  "prefer_related_applications": false,
+  
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00dd93",
+  "background_color": "#ee1175",
+
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "favicon.png",
+      "src": "assets/manifestIcons/chrome/chrome-512x512.png",
       "sizes": "512x512"
     },
     {
-      "src": "favicon.png",
-      "sizes": "192x192"
+      "src": "assets/manifestIcons/chrome/chrome-256x256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "assets/manifestIcons/chrome/chrome-128x128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "assets/manifestIcons/chrome/chrome-64x64.png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "assets/manifestIcons/chrome/chrome-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "assets/manifestIcons/chrome/chrome-24x24.png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "assets/manifestIcons/chrome/chrome-16x16.png",
+      "sizes": "16x16"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#006bdd",
-  "background_color": "#11ccee"
+  ]
 }
