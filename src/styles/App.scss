@@ -23,11 +23,6 @@
     justify-content: center;
     align-items: center;
     background: #006bdda3;
-    // visibility: hidden;
-
-    // &.show-pwa-install-btn {
-    //   visibility: visible;
-    // }
 
     .add-pwa-btn {
       font-size: 1.4rem;
@@ -103,6 +98,7 @@
     }
     .icon-credit {
       margin: .4rem;
+      font-size: .1rem;
     }
   }
 }
