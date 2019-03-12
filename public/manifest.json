@@ -18,6 +18,10 @@
       "sizes": "256x256"
     },
     {
+      "src": "assets/manifestIcons/chrome/chrome-192x192.png",
+      "sizes": "192x192"
+    },
+    {
       "src": "assets/manifestIcons/chrome/chrome-128x128.png",
       "sizes": "128x128"
     },
