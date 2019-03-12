@@ -45,29 +45,23 @@ class InstallButton extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('beforeinstallprompt', this.promptEventManagement)
+    window.addEventListener('beforeinstallprompt', e => {
+      debugger
+      // Object that will gather changes for state
+      let newChangesObj = {}
+      // Prevent Chrome v67 or earlier from auto showing the prompt
+      e.preventDefault()
+      // Stash the event for later usage
+      newChangesObj.deferredPrompt = e
+      // Update the UI to indicate to user that they can add to the home screen
+      this.props.togglePwaArea()
+  
+      this.setState(newChangesObj)
+    })
   }
 
   componentWillReceiveProps(prevProps) {
     debugger;
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('beforeinstallprompt', this.promptEventManagement)
-  }
-
-  promptEventManagement = e => {
-    debugger
-    // Object that will gather changes for state
-    let newChangesObj = {}
-    // Prevent Chrome v67 or earlier from auto showing the prompt
-    e.preventDefault()
-    // Stash the event for later usage
-    newChangesObj.deferredPrompt = e
-    // Update the UI to indicate to user that they can add to the home screen
-    this.props.togglePwaArea()
-
-    this.setState(newChangesObj)
   }
 
   handleInstallBtnClick = e => {
