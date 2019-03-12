@@ -46,17 +46,17 @@ class InstallButton extends React.Component {
 
   componentDidMount() {
     window.addEventListener('beforeinstallprompt', e => {
+      console.log('beforeinstallprompt has fired', e)
       // Object that will gather changes for state
       let newChangesObj = {}
-      console.log('beforeinstallprompt has fired', e)
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault()
       // Stash the event so it can be triggered later.
-      newChangesObj.deferredPrompt = e
+      const deferredPrompt = e
       // Update the UI to indicate to user that they can add to the home screen
       this.props.togglePwaArea()
   
-      this.setState(newChangesObj)
+      this.setState({ deferredPrompt })
     })
   }
 
@@ -69,23 +69,22 @@ class InstallButton extends React.Component {
     // Show the prompt
     deferredPrompt.prompt()
     // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice()
-      .then(choiceResult => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User has green lit the installation of this PWA! Woohoo!')
-          // They accepted.  Do your stuff?
-        } else {
-          console.log("User says shut it down, son.  No PWA install today :'(")
-          // They denied; wait till the next 'beforeinstallprompt' event is fired on the next page navigation
-        }
-        newChangesObj.deferredPrompt = null
-        this.setState(newChangesObj)
-      })
-      .catch(err => {
-        console.log(`There was an error with the userChoice(): ${err}`)
-        newChangesObj.deferredPrompt = null
-        this.setState(newChangesObj)
-      })
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User has green lit the installation of this PWA! Woohoo!')
+        // They accepted.  Do your stuff?
+      } else {
+        console.log("User says shut it down, son.  No PWA install today :'(")
+        // They denied; wait till the next 'beforeinstallprompt' event is fired on the next page navigation
+      }
+      newChangesObj.deferredPrompt = null
+      this.setState(newChangesObj)
+    })
+    .catch(err => {
+      console.log(`There was an error with the userChoice(): ${err}`)
+      newChangesObj.deferredPrompt = null
+      this.setState(newChangesObj)
+    })
   }
 
   render() {
