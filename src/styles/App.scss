@@ -21,13 +21,13 @@
     display: flex;
     justify-content: center;
     background: #006bdda3;
+    // visibility: hidden;
 
-    &.show-pwa-install-btn {
-      display: inline-block;
-    }
+    // &.show-pwa-install-btn {
+    //   visibility: visible;
+    // }
 
     .add-pwa-btn {
-      display: none;
       margin: 2rem;
       font-size: 2rem;
       background: red;

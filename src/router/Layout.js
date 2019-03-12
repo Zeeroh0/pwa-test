@@ -20,7 +20,7 @@ class Layout extends React.Component {
       <Route
         {...rest}
         render={props => (
-          <div className='App-wrapper' >
+          <div className={`App-wrapper ${showInstallPwaArea ? 'show-pwa-btn-area' : ''}`} >
             <InstallButton showAddInstallBtn={showInstallPwaArea} togglePwaArea={this.togglePwaArea} />
             <Navigation  />
             <div className="App">
@@ -58,10 +58,6 @@ class InstallButton extends React.Component {
   
       this.setState(newChangesObj)
     })
-  }
-
-  componentWillReceiveProps(prevProps) {
-    debugger;
   }
 
   handleInstallBtnClick = e => {
