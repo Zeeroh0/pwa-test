@@ -7,7 +7,7 @@ class Layout extends React.Component {
     showInstallPwaArea: false,
   }
 
-  togglePwaArea = e => {
+  togglePwaArea = () => {
     const { showInstallPwaArea } = this.state;
     this.setState({ showInstallPwaArea: !showInstallPwaArea })
   }
@@ -48,11 +48,16 @@ class InstallButton extends React.Component {
     window.addEventListener('beforeinstallprompt', this.promptEventManagement)
   }
 
+  componentWillReceiveProps(prevProps) {
+    debugger;
+  }
+
   componentWillUnmount() {
     window.removeEventListener('beforeinstallprompt', this.promptEventManagement)
   }
 
   promptEventManagement = e => {
+    debugger
     // Object that will gather changes for state
     let newChangesObj = {}
     // Prevent Chrome v67 or earlier from auto showing the prompt
@@ -60,7 +65,6 @@ class InstallButton extends React.Component {
     // Stash the event for later usage
     newChangesObj.deferredPrompt = e
     // Update the UI to indicate to user that they can add to the home screen
-    // newChangesObj.showAddInstallBtn = true
     this.props.togglePwaArea()
 
     this.setState(newChangesObj)
@@ -71,7 +75,6 @@ class InstallButton extends React.Component {
     // Object that will gather changes for state
     let newChangesObj = {}
     // Hide the button
-    // newChangesObj.showAddInstallBtn = false
     this.props.togglePwaArea()
     // Show the prompt
     deferredPrompt.prompt()
