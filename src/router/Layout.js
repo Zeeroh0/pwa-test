@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom'
 
 class Layout extends React.Component {
   state = {
-    showInstallPwaArea: true,
+    showInstallPwaArea: false,
     installStatus: 'pending',
   }
 
