@@ -22,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #006bdda3;
+    background: #dd001fa3;
 
     .add-pwa-btn {
       font-size: 1.4rem;
@@ -50,7 +50,7 @@
   nav {
     display: flex;
     justify-content: space-evenly;
-    background: #006bdd;
+    background: #dd001f;
     
     a {
       padding: 1rem;
@@ -87,7 +87,7 @@
 
   footer {
     grid-area: footer;
-    background-color: #006bdd;
+    background-color: #dd001f;
     color: #fff;
     display: flex;
     justify-content: flex-end;
